@@ -1,46 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit.c                                           :+:      :+:    :+:   */
+/*   read_tetriminos.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enunes <eocnunes@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/03 22:44:05 by enunes            #+#    #+#             */
-/*   Updated: 2017/07/04 19:57:42 by gaguirre         ###   ########.fr       */
+/*   Created: 2017/07/03 23:08:48 by enunes            #+#    #+#             */
+/*   Updated: 2017/07/04 19:59:58 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #define BUFF_SIZE 546
+#include <stdio.h>
+#include <unistd.h>
 
-#include <fcntl.h>
-#include <libft.h>
-
-int		read_tetriminos(int const fd, char **file);
-
-int		main(int argc,char **argv)
+int		read_tetriminos(int const fd, char **file)
 {
-	int 	fd;
-	int		ret;
-	char	*file[BUFF_SIZE];
+	int		rb;
+	char	tmp[BUFF_SIZE + 1];
 
-	fd = open(argv[1], O_RDONLY);
-	if (argc != 2)
-	{
-		ft_putstr("error\n");
-		return (0);
-	}
-	else
-	{
-		ret = read_tetriminos(fd, file);
-		if (ret == -1)
-		{
-			ft_putstr("error\n");
-			return (0);
-		}
-	//	else
-	//	{
-	//		check_tetriminos(file);
-	//	}
-	}
+	rb = read(fd, tmp, BUFF_SIZE);
+	tmp[rb] = '\0';
+	printf("%s", tmp);
+	*file = tmp;
 	return (0);
 }
