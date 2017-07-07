@@ -6,7 +6,7 @@
 /*   By: enunes <eocnunes@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/05 14:27:59 by enunes            #+#    #+#             */
-/*   Updated: 2017/07/06 00:04:27 by enunes           ###   ########.fr       */
+/*   Updated: 2017/07/06 21:45:20 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <libft.h>
+# include <stdlib.h>
 
 int		read_tetriminos(int const fd, char *file);
 int		check_tetriminos(char *file);
