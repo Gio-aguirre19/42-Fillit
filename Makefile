@@ -6,7 +6,7 @@
 #    By: enunes <eocnunes@gmail.com>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/04 14:14:26 by enunes            #+#    #+#              #
-#    Updated: 2017/07/04 19:42:06 by gaguirre         ###   ########.fr        #
+#    Updated: 2017/07/06 14:23:30 by enunes           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,13 @@ NAME = fillit
 
 SRCS = 	fillit.c \
 		read_tetriminos.c \
+		check_tetriminos.c \
 
 OBJS = $(SRCS:.c=.o)
 
-INCLUDE = includes/libft
+INCLUDE = includes/
+
+LIBFT = libft/
 
 CC = gcc
 
@@ -29,7 +32,7 @@ all: $(NAME)
 		@$(CC) -c $(FLAGS) $< -o $@
 
 $(NAME):		
-		@$(CC) -o $(NAME) $(FLAGS) $(SRCS) -I $(INCLUDE) -L $(INCLUDE) -lft
+		@$(CC) -o $(NAME) $(FLAGS) $(SRCS) -I $(INCLUDE) -I $(LIBFT) -L $(LIBFT) -lft
 
 clean:
 		@rm -f $(OBJS)

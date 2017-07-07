@@ -6,41 +6,44 @@
 /*   By: enunes <eocnunes@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/03 22:44:05 by enunes            #+#    #+#             */
-/*   Updated: 2017/07/04 19:57:42 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/07/06 17:34:07 by enunes           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define BUFF_SIZE 546
-
-#include <fcntl.h>
-#include <libft.h>
-
-int		read_tetriminos(int const fd, char **file);
+#include <stdio.h>
+#include <fillit.h>
 
 int		main(int argc,char **argv)
 {
 	int 	fd;
 	int		ret;
-	char	*file[BUFF_SIZE];
+	char	file[BUFF_SIZE];
 
 	fd = open(argv[1], O_RDONLY);
 	if (argc != 2)
 	{
-		ft_putstr("error\n");
+		ft_putstr("error1\n");
 		return (0);
 	}
 	else
 	{
 		ret = read_tetriminos(fd, file);
+	//	printf("%s", file);
 		if (ret == -1)
 		{
-			ft_putstr("error\n");
+			ft_putstr("error2\n");
 			return (0);
 		}
-	//	else
-	//	{
-	//		check_tetriminos(file);
-	//	}
+		else
+		{
+			if (!check_tetriminos(file))
+			{
+				ft_putstr("error3\n");
+				return (0);
+			}
+			else
+				printf("File OK\n");
+		}
 	}
 	return (0);
 }
