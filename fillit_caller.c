@@ -6,7 +6,7 @@
 /*   By: gaguirre <gio_aguirre19@yahoo.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:54:07 by gaguirre          #+#    #+#             */
-/*   Updated: 2017/07/08 14:58:30 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/07/08 15:29:45 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		check_tetriminos(char *file)
 	if (!check_chars(file))
 		return (0);
 	if (!check_width(file))
-		retur (0);
+		return (0);
 	if (!check_length(file))
 		return (0);
 	return (1);

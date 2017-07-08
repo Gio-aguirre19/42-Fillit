@@ -6,7 +6,7 @@
 /*   By: gaguirre <gio_aguirre19@yahoo.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 20:43:18 by gaguirre          #+#    #+#             */
-/*   Updated: 2017/07/08 15:27:09 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/07/08 15:32:00 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,16 @@ int		create_piece(char *grid, char *file)
 			j++;
 		}
 		if (file[i] == '\n')
+		{
 			if (file[i + 1] == '\n' || file[i + 1] == '\0')
 			{
 				grid[j] = '\0';
 				return (1);
 			}
+		}
+		i++;
 	}
-	i++;
+	return (0);
 }
 
 int		get_pieces(char *file, char ** puzzle)
