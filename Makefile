@@ -6,15 +6,18 @@
 #    By: enunes <eocnunes@gmail.com>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/04 14:14:26 by enunes            #+#    #+#              #
-#    Updated: 2017/07/06 14:23:30 by enunes           ###   ########.fr        #
+#    Updated: 2017/07/08 13:40:16 by gaguirre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fillit
 
 SRCS = 	fillit.c \
+		fillit_caller.c \
 		read_tetriminos.c \
-		check_tetriminos.c \
+		check_grid.c \
+		get_puzzle.c \
+
 
 OBJS = $(SRCS:.c=.o)
 

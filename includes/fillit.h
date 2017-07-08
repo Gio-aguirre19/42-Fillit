@@ -6,23 +6,27 @@
 /*   By: enunes <eocnunes@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/05 14:27:59 by enunes            #+#    #+#             */
-/*   Updated: 2017/07/06 21:45:20 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/07/08 14:53:27 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
 # define FILLIT_H
 
-# define BUFF_SIZE 546
+# define BUFF_SIZE 1000
 
 # include <unistd.h>
 # include <fcntl.h>
 # include <libft.h>
-# include <stdlib.h>
 
 int		read_tetriminos(int const fd, char *file);
 int		check_tetriminos(char *file);
 int		check_chars(char *file);
-int		check_grid(char *file);
+int		check_width(char *file);
+int		check_length(char *file);
+int		count_pieces(char *file);
+int		create_piece(char *grid, char *file);
+int		get_pieces(char *file, char **puzzle);
+char	**setup_puzzle(char *file);
 
 #endif
