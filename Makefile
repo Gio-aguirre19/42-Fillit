@@ -6,7 +6,7 @@
 #    By: enunes <eocnunes@gmail.com>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/04 14:14:26 by enunes            #+#    #+#              #
-#    Updated: 2017/07/08 13:40:16 by gaguirre         ###   ########.fr        #
+#    Updated: 2017/07/08 20:16:42 by gaguirre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRCS = 	fillit.c \
 		read_tetriminos.c \
 		check_grid.c \
 		get_puzzle.c \
-
+		trim.c \
 
 OBJS = $(SRCS:.c=.o)
 

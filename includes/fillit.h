@@ -6,7 +6,7 @@
 /*   By: enunes <eocnunes@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/05 14:27:59 by enunes            #+#    #+#             */
-/*   Updated: 2017/07/08 14:53:27 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/07/08 20:15:19 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ int		count_pieces(char *file);
 int		create_piece(char *grid, char *file);
 int		get_pieces(char *file, char **puzzle);
 char	**setup_puzzle(char *file);
+int		pat_strstr(char *src, char *v_pat);
+void	get_valid(char v_pat[20][15], int i);
+int		valid_patern(char **src, int block);
 
 #endif
