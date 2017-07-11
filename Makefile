@@ -1,4 +1,5 @@
 # **************************************************************************** #
+#
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -17,7 +18,7 @@ SRCS = 	fillit.c \
 		read_tetriminos.c \
 		check_grid.c \
 		get_puzzle.c \
-		trim.c \
+		trim_pieces.c \
 
 OBJS = $(SRCS:.c=.o)
 

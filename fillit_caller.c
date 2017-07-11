@@ -6,11 +6,12 @@
 /*   By: gaguirre <gio_aguirre19@yahoo.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 14:54:07 by gaguirre          #+#    #+#             */
-/*   Updated: 2017/07/08 15:29:45 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/07/09 00:23:36 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fillit.h>
+#include <stdio.h>
 
 int		check_tetriminos(char *file)
 {
@@ -39,5 +40,6 @@ char	**setup_puzzle(char *file)
 		return (0);
 	if (!get_pieces(file, puzzle))
 		return (0);
+	printf("%s\n", *puzzle);
 	return (puzzle);
 }

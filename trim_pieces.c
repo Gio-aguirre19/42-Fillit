@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   trim.c                                             :+:      :+:    :+:   */
+/*   trim_pieces.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gaguirre <gio_aguirre19@yahoo.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 15:45:10 by gaguirre          #+#    #+#             */
-/*   Updated: 2017/07/08 20:17:11 by gaguirre         ###   ########.fr       */
+/*   Updated: 2017/07/10 20:37:50 by gaguirre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <fillit.h>
 
-int		pat_strstr(char *src, char *v_pat)
+int		bool_strstr(char *src, char *pat)
 {
-	while (*src)
+	int		i;
+	int		j;
+
+	i = 0;
+	while (src[i])
 	{
-		while (*src == *v_pat)
+		j = 0;
+		while (src[i + j] == pat[j])
 		{
-			src++;
-			v_pat++;
-			if (!*v_pat)
-			{
+			j++;
+			if (!pat[j])
 				return (1);
-			}
 		}
-		src++;
+		i++;
 	}
 	return (0);
 }
@@ -55,31 +58,36 @@ void	get_valid(char valid[20][15], int i)
 	ft_strcpy(valid[18], "##...##");
 }
 
-int		valid_patern(char **src, int blocks)
+int		valid_pattern(char **src, int pieces)
 {
-	int valid;
-	int i;
-	int j;
-	char v_pat[20][15];
+	int 	i;
+	int 	j;
+	int 	valid;
+	char 	pattern[20][15];
 
-	valid = 0;
 	i = -1;
-	j = -1;
-	get_valid(v_pat, -1);
-	while (++i < blocks)
+	valid = 0;
+	get_valid(pattern, -1);
+	while (++i < pieces)
 	{
-		while (++j < 19)
+		j = 0;
+		while (j < 19)
 		{
-			if (pat_strstr(src[i], v_pat[j]))
+			if (bool_strstr(src[i], pattern[j]))
 			{
+				printf("valid: %d || for: %d\n", j, i);
 				ft_bzero(src[i], ft_strlen(src[i]));
-				ft_strcpy(src[i], v_pat[j]);
+				ft_strcpy(src[i], pattern[j]);
 				valid = 1;
 				break ;
 			}
+			j++;
 		}
 		if (!valid)
+		{
+			ft_putstr("\nproblem\n");
 			return (0);
+		}
 	}
 	return (1);
 }
